@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { BannerComponent } from './banner/banner.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [BannerComponent],
+  template: `
+    <button (click)="showMore = true">
+      {{ showMore ? 'Collapse' : 'Expand' }}
+    </button>
+    <app-banner [(expand)]="showMore" />
+  `
 })
 export class AppComponent {
-  title = 'angular-model-example';
+  showMore = false;
 }
