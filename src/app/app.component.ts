@@ -6,9 +6,14 @@ import { BannerComponent } from './banner/banner.component';
   standalone: true,
   imports: [BannerComponent],
   template: `
-    <button (click)="showMore = true">
-      {{ showMore ? 'Collapse' : 'Expand' }}
-    </button>
+    <div class="header">
+      <img class="logo" src="./assets/logo.png" alt="Decoded Frontend">
+      
+      <button class="toggle-button" (click)="showMore = !showMore">
+        {{ showMore ? 'Collapse' : 'Expand' }} Banner
+      </button>
+    </div>
+
     <app-banner [(expand)]="showMore" />
   `
 })

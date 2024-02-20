@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 110px;
+  display: block;
+}
+.toggle-button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #debd01;
+  background: #f9d50b;
+  cursor: pointer;
+  &:hover {
+    background: #e1c212;
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #999;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,29 @@
+:host {
+  border: 1px solid #666;
+  box-sizing: border-box;
+  display: block;
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 350px;
+  max-width: 350px;
+  h1 {
+    margin: 0;
+    color: rgb(9, 85, 161);
+  }
+  .info-toggle {
+    width: 100%;
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 1px #f4f3f3;
+    cursor: pointer;
+    &:hover {
+      border: solid 1px #eae9e9;
+      background-color: #f4f3f3;
+    }
+  }
+  .more-info {
+    position: relative;
+  }
+}
