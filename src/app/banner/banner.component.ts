@@ -13,8 +13,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
         <p>Decoded Frontend is a source of advanced, in-depth, and pragmatic video tutorials about Angular and Web Development. Every second Tuesday I publish a new video focusing on advanced topics and tricks that might kick off your carrier and help you to quickly grow from Middle to Senior level. </p>
       </section>
     }
-  `,
-  styleUrl: './banner.component.scss'
+  `
 })
 export class BannerComponent {
   @Input()
