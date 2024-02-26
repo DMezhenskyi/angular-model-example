@@ -10,17 +10,15 @@ describe('BannerComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BannerComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
-
+  
   it('should emit output when state changes', () => {
     let expectedValue: undefined | boolean;
+    component.expand = false;
     component.expandChange.subscribe(value => expectedValue = value);
+    fixture.detectChanges();
     
     const toggleButton = fixture.nativeElement.querySelector('.info-toggle');
-
-    fixture.componentRef.setInput('expand', false);
-
     toggleButton.click();
     
     expect(expectedValue).toBe(true);
@@ -28,7 +26,7 @@ describe('BannerComponent', () => {
 });
 
 describe('BannerComponent | TestHost Strategy', () => {
-  let component: TestHostComponent;
+  let hostComponent: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
 
   @Component({
@@ -44,7 +42,7 @@ describe('BannerComponent | TestHost Strategy', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestHostComponent);
-    component = fixture.componentInstance;
+    hostComponent = fixture.componentInstance;
     fixture.detectChanges();
   });
 
@@ -53,7 +51,7 @@ describe('BannerComponent | TestHost Strategy', () => {
     const toggleButton = fixture.nativeElement.querySelector('.info-toggle');
     toggleButton.click();
 
-    expect(component.showMore).toBe(true);
+    expect(hostComponent.showMore).toBe(true);
 
   })
 })
