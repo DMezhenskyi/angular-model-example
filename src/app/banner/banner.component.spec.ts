@@ -14,9 +14,9 @@ describe('BannerComponent', () => {
   
   it('should emit output when state changes', () => {
     let expectedValue: undefined | boolean;
-    component.expand = false;
-    component.expandChange.subscribe(value => expectedValue = value);
+    fixture.componentRef.setInput('expand', false);
     fixture.detectChanges();
+    component.expand.subscribe(value => expectedValue = value);
     
     const toggleButton = fixture.nativeElement.querySelector('.info-toggle');
     toggleButton.click();

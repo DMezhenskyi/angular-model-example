@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { BannerComponent } from './banner/banner.component';
 
 @Component({
@@ -9,8 +9,8 @@ import { BannerComponent } from './banner/banner.component';
     <div class="header">
       <img class="logo" src="./assets/logo.png" alt="Decoded Frontend">
       
-      <button class="toggle-button" (click)="showMore = !showMore">
-        {{ showMore ? 'Collapse' : 'Expand' }} Banner
+      <button class="toggle-button" (click)="showMore.set(!showMore())">
+        {{ showMore() ? 'Collapse' : 'Expand' }} Banner
       </button>
     </div>
 
@@ -18,5 +18,5 @@ import { BannerComponent } from './banner/banner.component';
   `
 })
 export class AppComponent {
-  showMore = false;
+  showMore = signal(false);
 }
